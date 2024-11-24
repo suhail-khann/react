@@ -1,12 +1,32 @@
-import simple from "./components/simple"
+import Parent from "./components/Parent.jsx";
+import DataTable from "./components/DataTable.jsx";
+import UseEffectHook from "./components/UseEffectHook.jsx";
+
 const App = () => {
-  return (
-    <div className="App">
-        <simple message = "this is first message"/>
-        <simple message = "this is second message"/>
-        <simple message = "this is third message"/>
-        <simple message = "this is forth message"/>
-      </div> 
-  );
- }
+    const table1 = [
+      {name: "Rishi", designation: "Engineer"},
+      {name: "Skanda", designation: "Doctor"},
+      {name: "Shreyank", designation: "waste"},
+    ]
+
+    const table2 = [
+      {name: "R", designation: "Engi"},
+      {name: "S", designation: "Doc"},
+      {name: "S", designation: "waste"},
+    ]
+
+
+    return (
+        <>  
+          <div className="App">
+            <DataTable data={table1} />
+            <br></br>
+            <DataTable data={table2} />
+            <br></br>
+            <UseEffectHook />
+          </div>
+        </>
+    )
+};
+
 export default App;
